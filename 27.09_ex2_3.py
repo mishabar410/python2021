@@ -33,11 +33,11 @@ def house(x, y, k):
 
 def clouds(x, y, k):
     for i in range(2):
-        circle(screen, (0, 0, 0), (x + i * int(15 * k), y), int(15 * k))
+        circle(screen, (0, 0, 0), (x + i * int(15 * k), y), int(14 * k) + 1)
         circle(screen, (255, 255, 255), (x + i * int(15 * k), y), int(14 * k))
 
     for i in range (4):
-        circle(screen, (0, 0, 0), (x + i * int(15 * k) - 15, y + 15), int(15 * k))
+        circle(screen, (0, 0, 0), (x + i * int(15 * k) - 15, y + 15), int(14 * k) + 1)
         circle(screen, (255, 255, 255), (x + i * int(15 * k) - 15, y + 15), int(14 * k))
 
 def tree(x, y, k):
@@ -62,44 +62,21 @@ def tree(x, y, k):
     circle(screen, (0, 0, 0), (x + 20 * k, y - 20 * k), int(15 * k))
     circle(screen, (15, 83, 14), (x + 20 * k, y - 20 * k), int(14 * k))
 
-    '''
-    polygon(screen, (0, 0, 0), [(330, 140), (330, 190), (340, 190), (340, 140)])
-
-    circle(screen, (0, 0, 0), (320, 135), 15)
-    circle(screen, (15, 83, 14), (320, 135), 14)
-
-    circle(screen, (0, 0, 0), (320, 120), 15)
-    circle(screen, (15, 83, 14), (320, 120), 14)
-
-    circle(screen, (0, 0, 0), (335, 127), 15)
-    circle(screen, (15, 83, 14), (335, 127), 14)
-
-    circle(screen, (0, 0, 0), (335, 112), 15)
-    circle(screen, (15, 83, 14), (335, 112), 14)
-
-    circle(screen, (0, 0, 0), (350, 135), 15)
-    circle(screen, (15, 83, 14), (350, 135), 14)
-
-    circle(screen, (0, 0, 0), (350, 120), 15)
-    circle(screen, (15, 83, 14), (350, 120), 14)
     
-
-house(70, 125, 1)
-
-house(270, 125, 1.5)
-
-clouds(143, 40, 1)
-
-clouds(243, 40, 1.5)
-
-tree(335, 140, 1)
-'''
 
 tree(400, 140, 1)
 
-clouds(300, 75, 1)
+clouds(100, 75, 1)
 
-house(100, 145, 1)
+house(50, 145, 1)
+
+tree(200, 155, 0.8)
+
+clouds(300, 60, 0.8)
+
+clouds(600, 50, 1.2)
+
+house(500, 160, 0.8)
 
 polygons(big_n_polygon, small_npolygon, 500, 75, 20)
 
@@ -110,10 +87,6 @@ for i in range(20):
     total.append(small_npolygon[i])
 
 polygon(screen, (249, 194, 194), total)
-
-
-
-
 
 pygame.display.update()
 clock = pygame.time.Clock()
